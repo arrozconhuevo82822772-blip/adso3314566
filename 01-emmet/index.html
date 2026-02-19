@@ -1,31 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-emmet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+        body {
+            background-color: #92C131;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%239ecd4a' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23aad863' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23b6e47b' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23c2ef94' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23CEFBAD' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: -0rem;
+            padding: 2rem;
+            max-width: 900px;
+            color: white;
+        }
+
+        a.btn-home {
+            fill: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            position: fixed;
+            display: flex;
+            width: 32px;
+            height: 32px;
+            opacity: .6;
+            padding: 0.4rem;
+            inset: 0.4rem;
+            transition: all 0.46s ease-in;
+            z-index: 10;
+        }
+        a.btn-home:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        section {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            width: 100%;
+            text-align: left;
+        }
+
+        section h2, section h4, section p {
+            margin: 0.5rem 0;
+        }
+
+        xmp {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            text-align: left;
+            white-space: pre-wrap;
+            border: none;
+            margin: 1rem 0 0;
+        }
+    </style>
+</head>
+<body>
+    <a class="btn-home" href="../index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="auto" height="auto"><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z"/></svg>
+    </a>
+    <main>
+        <h1>01-emmet</h1>
+        <h4>Work flow - Markup & Styling</h4>
+        <img src="logo-large.png" alt="Emmet" width="240">
+
+        <section>
+            <h2>Nesting ></h2>
+            <h4>example:</h4>
+            <p>ul>li>a ↔️</p>
+            <h4>result</h4>
+            <xmp>
 <ul>
     <li><a href=""></a></li>
 </ul>
+            </xmp>
+        </section>
 
-<section></section>
-<header></header>
-<nav></nav>
-
+        <section>
+            <h2>Elementos Hermanos +</h2>
+            <h4>Ejemplo:</h4>
+            <p>ul>li*3</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <ul>
     <li></li>
     <li></li>
     <li></li>
 </ul>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Repetir Elementos *</h2>
+            <h4>Ejemplo:</h4>
+            <p>div.contenedor .contenedor2</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <div class="contenedor"></div>
-
 <div class="contenedor2"></div>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Atributo Clase .</h2>
+            <h4>Ejemplo:</h4>
+            <p>div.clase1.clase2.clasen</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <div class="clase1 clase2 clasen"></div>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Multiples Clases .</h2>
+            <h4>Ejemplo:</h4>
+            <p>nav#menu</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <nav id="menu"></nav>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Atributo Identificador #</h2>
+            <h4>Ejemplo:</h4>
+            <p>div{Lorem Ipsum Dolor} a{Click Aquí}</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <div>Lorem Ipsum Dolor</div>
 <a href="">Click Aquí</a>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Adicionar Texto { }</h2>
+            <h4>Ejemplo:</h4>
+            <p>a[href=www.google.com]</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <a href="www.google.com"></a>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Personalizar Atributos [ ]</h2>
+            <h4>Ejemplo:</h4>
+            <p>ul>li.num$*3 section>article.sec$$$*3</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <ul>
     <li class="num1"></li>
     <li class="num2"></li>
@@ -36,23 +177,83 @@
     <article class="sec002"></article>
     <article class="sec003"></article>
 </section>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Números Consecutivos $</h2>
+            <h4>Ejemplo:</h4>
+            <p>ul>li.num$@-*3</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <ul>
     <li class="num3"></li>
     <li class="num2"></li>
     <li class="num1"></li>
 </ul>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Dirección Números Consecutivos @-</h2>
+            <h4>Ejemplo:</h4>
+            <p>ul>li.num$@3*4</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <ul>
     <li class="num3"></li>
     <li class="num4"></li>
     <li class="num5"></li>
     <li class="num6"></li>
 </ul>
+            </xmp>
+        </section>
 
+        <section>
+            <h2>Base Números Consecutivos @n</h2>
+            <h4>Ejemplo:</h4>
+            <p>section>article>div^p</p>
+            <h4>Resultado:</h4>
+            <xmp>
 <section>
     <article>
         <div></div>
     </article>
     <p></p>
 </section>
+            </xmp>
+        </section>
+
+        <section>
+            <h2>Subir Nivel ^</h2>
+            <h4>Ejemplo:</h4>
+            <p>(header>nav)(section>article)</p>
+            <h4>Resultado:</h4>
+            <xmp>
+<header>
+    <nav></nav>
+</header>
+<section>
+    <article></article>
+</section>
+            </xmp>
+        </section>
+
+        <!-- Nueva sección: Agrupar Elementos -->
+        <section>
+            <h2>Agrupar Elementos</h2>
+            <h4>Ejemplo:</h4>
+            <p>(header>nav)(section>article)</p>
+            <h4>Resultado:</h4>
+            <xmp>
+<header>
+    <nav></nav>
+</header>
+<section>
+    <article></article>
+</section>
+            </xmp>
+        </section>
+    </main>
+</body>
+</html>

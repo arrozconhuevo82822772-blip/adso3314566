@@ -7,72 +7,112 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
         body {
-            background: linear-gradient(rgb(221, 215, 215), rgb(60, 60, 155));
-            font-family: Lilita One , sans-serif;
+            background-color: #FFFFFF;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23FFFFFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23f6f0f5' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23ece1ec' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23e3d2e3' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23dac4d9' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d0b5d0' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23c7a7c7' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23bd99be' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b48bb4' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23aa7dab' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23a16fa2' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23976199' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%238e5490' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23844688' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%237a387f' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23712976' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%2367186e' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%235D0065' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Lilita One', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100dvh;
-            main {
-                h1 {
-                    font-size: 3.4rem;
-                    margin: 0;
-                }
-                img { 
-                    object-fit: cover;
-                    border: 6px solid white;
-                    border-radius: 50%;
-                    height: 240px;
-                    display: flex;
-                    margin:  1rem auto;
-                    width: 240px;
-                }
-                h4{
-                    text-align: center;
-                    font-size: 1.2rem;
-                }
-            }
-            menu {
-                display: flex;
-                flex-direction: column;
-                gap: 0.6rem;
-                a:link, a:visited{
-                    background-color: #fff;
-                    color: #101010;;
-                    border-radius: 17rem;
-                    display: flex;
-                    align-items: center;
-                    text-decoration: none;
-                    span{
-                        background-color: #1060;
-                        color: rgb(60, 60, 155);
-                        border-radius: 50%;
-                        font-size: 3rem;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 50px;
-                        width: 60px;
-                    }
-                    h4 {
-                        margin: 0;
-                    }
-                    small {
+            margin: 0;
+        }
 
-                    }
-                }
-            }
-        }        
-        
+        main h1 {
+            font-size: 3.4rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        main img {
+            object-fit: cover;
+            border: 4px solid white;   
+            border-radius: 50%;
+            height: 240px;
+            display: block;
+            margin: 1rem auto;
+            width: 240px;
+        }
+
+        main h4 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            padding: 0;
+        }
+
+        menu a {
+            background-color: #fff;
+            color: #101010;
+            border-radius: 17rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 0.2rem 0.2rem 0.2rem 0;
+            transition: all 0.2s ease;  
+        }
+
+        menu a:hover {
+            background-color: #5D0065;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        menu a span {
+            background-color: rgba(96, 96, 255, 0.2);
+            color: rgb(60, 60, 155);
+            border-radius: 50%;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 60px;
+            margin-right: 0.5rem;
+            transition: inherit;
+        }
+
+        menu a:hover span {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        menu a aside {
+            display: flex;
+            flex-direction: column;
+        }
+
+        menu a h4 {
+            margin: 0;
+            text-align: left;
+            font-size: 1.4rem;
+        }
+
+        menu a small {
+            display: block;
+            font-size: 0.7rem;
+        }
+
+        menu a:hover h4,
+        menu a:hover small {
+            color: white;
+        }
     </style>
 </head>
 <body>
     <main>
         <h1>ADSO 3314566</h1>
         <img src="25e9a6df-f401-4c95-b188-7d5f896be8ab.jpg" alt="">
-        <H4>Nelson Sebastian Serna </H4>
+        <h4>Nelson Sebastian Serna</h4> 
         <menu>
-            <a href="01-emet/">
+            <a class="01 emmet" href="/01-emmet/index.html">
                 <span>01</span>
                 <aside>
                     <h4>Emmet</h4>
@@ -83,7 +123,7 @@
                 <span>02</span>
                 <aside>
                     <h4>Html</h4>
-                    <small>Structure -  Hypertext Markup Language</small>
+                    <small>Structure - Hypertext Markup Language</small>
                 </aside>
             </a>
             <a href="03-css/">
