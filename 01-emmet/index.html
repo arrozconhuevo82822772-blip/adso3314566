@@ -51,10 +51,21 @@
 
         section {
             margin-top: 2rem;
-            padding: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.3);
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
             width: 100%;
             text-align: left;
+            background-color: rgba(255,255,255,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+            background-color: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
         }
 
         section h2, section h4, section p {
@@ -71,6 +82,38 @@
             white-space: pre-wrap;
             border: none;
             margin: 1rem 0 0;
+        }
+
+        /* Animaciones adicionales */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        main {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            transition: text-shadow 0.3s ease;
+        }
+
+        h1:hover {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        img[alt="Emmet"] {
+            transition: transform 0.5s ease;
+        }
+
+        img[alt="Emmet"]:hover {
+            transform: rotate(5deg) scale(1.05);
         }
     </style>
 </head>
