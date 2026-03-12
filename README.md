@@ -16,7 +16,7 @@
 |04  |Javascript    |Behavior - Programing Language         |
 
 
-![OFAC](https://adso3314566sebastian-nu.vercel.app/imgs/fotoyo.jpg)
+![OFAC](https://adso3314566sebastian-nu.vercel.app/src/imgs/fotoyo.jpg)
 
 [ADSO Files DRIVE ](https://tinyurl.com/wnkk334u)
 
