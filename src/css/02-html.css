@@ -10,11 +10,19 @@
             margin: 0;
         }
         
-
-        main h1 {
-            font-size: 2.8rem;
-            margin: 0;
+        main 
+        h1 {
+            color: rgb(0, 0, 0);
+            background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Roboto Slab", serif;
+            font-size: 3.4rem;
+            margin: auto;
             text-align: center;
+            width: 100%;
+            max-width: 400px; 
         }
 
         main img {
@@ -33,6 +41,27 @@
             margin: 0.5rem 0;
         }
 
+        section {
+            background-color: #fff ;
+            border-radius: 0.2rem;
+            min-width: 350px;
+            max-width: 700px;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: black;
+            font-family: "Roboto Slab", cursive;
+            transition: all 0.4s ease-in;
+            h3 {
+                border-bottom: 2px solid #000000;
+                margin: 0;
+                color: rgb(0, 0, 0);
+            }
+            p {
+                color: rgba(0, 0, 0, 0.6);
+                font-family: "Roboto Slab", cursive;
+            }
+        }
+        
         a.btn-home {
             fill: white;
             border: 2px solid white;
