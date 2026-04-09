@@ -5,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11-formularios</title>
     <link rel="stylesheet" href="../src/css/02-html.css">
+    <style>
+        .forms-ref {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2f2f31;
+            color: #e8e8e8;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .forms-ref td {
+            border: 1px solid #f57f20;
+            padding: 0.5rem 0.7rem;
+            font-size: 0.95rem;
+        }
+
+        .forms-ref .title-row td {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .forms-ref .title-row td strong {
+            color: #ff7b22;
+        }
+
+        .forms-ref .attr {
+            width: 22%;
+            color: #f0f0f0;
+            white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -13,32 +46,75 @@
     <main>
         <header>
             <h1>11-formularios</h1>
-            <h2>Crea formularios interactivos para entradas de usuario.</h2>
+            <h2>Ejemplos funcionales de atributos en formularios.</h2>
         </header>
         <section>
             <form action="#" method="post">
-                <label for="name">Nombre:</label>
-                <input id="name" type="text" name="name" required>
-
-                <label for="email">Correo:</label>
-                <input id="email" type="email" name="email" required>
-
-                <label for="course">Curso:</label>
-                <select id="course" name="course">
-                    <option value="html">HTML</option>
-                    <option value="css">CSS</option>
-                    <option value="js">JavaScript</option>
-                </select>
-
-                <p>Nivel:</p>
-                <label><input type="radio" name="level" value="basic"> Básico</label>
-                <label><input type="radio" name="level" value="intermediate"> Intermedio</label>
-                <label><input type="radio" name="level" value="advanced"> Avanzado</label>
-
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-
-                <button type="submit">Enviar</button>
+                <table class="forms-ref">
+                    <tbody>
+                        <tr class="title-row">
+                            <td colspan="2">Referencia: <strong>Formularios</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">type</td>
+                            <td>
+                                <input type="text" name="tipo_texto" value="Texto">
+                                <input type="number" name="tipo_numero" value="10">
+                                <input type="email" name="tipo_email" value="correo@ejemplo.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="attr">name</td>
+                            <td><input type="text" name="usuario" value="El atributo name es 'usuario'"></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">value</td>
+                            <td><input type="text" name="valor_demo" value="Valor inicial desde value"></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">size</td>
+                            <td><input type="text" name="tam_demo" size="12" value="size=12"></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">maxlength</td>
+                            <td><input type="text" name="max_demo" maxlength="8" placeholder="Max 8"></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">checked</td>
+                            <td>
+                                <label><input type="checkbox" name="acepta" checked> Marcado por defecto</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="attr">disabled</td>
+                            <td><input type="text" name="deshabilitado" value="No editable" disabled></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">readonly</td>
+                            <td><input type="text" name="solo_lectura" value="Solo lectura" readonly></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">min y max</td>
+                            <td><input type="number" name="edad" min="18" max="60" value="18"></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">step</td>
+                            <td><input type="number" name="nota" min="0" max="5" step="0.5" value="3.5"></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">placeholder</td>
+                            <td><input type="text" name="ciudad" placeholder="Escribe tu ciudad"></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">required</td>
+                            <td><input type="text" name="campo_obligatorio" placeholder="Campo obligatorio" required></td>
+                        </tr>
+                        <tr>
+                            <td class="attr">Enviar</td>
+                            <td><button type="submit">Probar validacion</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </form>
         </section>
     </main>

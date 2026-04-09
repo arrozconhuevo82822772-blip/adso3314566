@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-reto-tablas</title>
     <link rel="stylesheet" href="../src/css/02-html.css">
+    <style>
+        .challenge-grid {
+            width: 100%;
+            max-width: 980px;
+            border-collapse: collapse;
+            background-color: #2f2f31;
+            color: #fff;
+            table-layout: fixed;
+        }
+
+        .challenge-grid td {
+            border: 3px solid #f0f0f0;
+            height: 62px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 2rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .challenge-grid .fill {
+            background-color: #06080d;
+        }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -16,33 +39,66 @@
             <h2>Practica la creación y estructura de tablas.</h2>
         </header>
         <section>
-            <table border="1">
-                <caption>Plan de Estudio Semanal</caption>
-                <thead>
-                    <tr>
-                        <th>Día</th>
-                        <th>08:00 - 10:00</th>
-                        <th>10:00 - 12:00</th>
-                        <th>14:00 - 16:00</th>
-                    </tr>
-                </thead>
+            <table class="challenge-grid">
                 <tbody>
                     <tr>
-                        <th>Lunes</th>
-                        <td>HTML</td>
-                        <td>CSS</td>
-                        <td>Práctica</td>
+                        <td colspan="5"></td>
+                        <td class="fill">😎</td>
+                        <td colspan="3"></td>
                     </tr>
                     <tr>
-                        <th>Martes</th>
-                        <td>JavaScript</td>
-                        <td>DOM</td>
-                        <td>Proyecto</td>
+                        <td colspan="4"></td>
+                        <td class="fill">😎</td>
+                        <td class="fill" rowspan="2">😎</td>
+                        <td class="fill">😎</td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <th>Miércoles</th>
-                        <td colspan="2">Fundamentos de Backend</td>
-                        <td>Git</td>
+                        <td colspan="3"></td>
+                        <td class="fill">😎</td>
+                        <td></td>
+                        <td class="fill">😎</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td class="fill">😎</td>
+                        <td class="fill" colspan="3">😎</td>
+                        <td class="fill">😎</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="fill">😎</td>
+                        <td colspan="5" class="fill">😎</td>
+                        <td class="fill">😎</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td class="fill">😎</td>
+                        <td class="fill" colspan="3">😎</td>
+                        <td class="fill">😎</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td class="fill">😎</td>
+                        <td></td>
+                        <td class="fill">😎</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td class="fill">😎</td>
+                        <td class="fill">😎</td>
+                        <td class="fill">😎</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td class="fill">😎</td>
+                        <td colspan="3"></td>
                     </tr>
                 </tbody>
             </table>
