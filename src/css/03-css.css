@@ -12,9 +12,6 @@
             margin: 0;
         }
         
-
-
-
         main {
             display: flex;
             flex-direction: column;
@@ -169,4 +166,21 @@
         a.btn-home:hover {
             transform: scale(1.1);
             opacity: 1;
+        }
+
+        section { 
+            margin: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        section ul {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            list-style: none;
         }
