@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10-percentage-units</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        main {
+            width: 100%;
+            section.Percentage {
+                border: 4px solid red;
+                margin: 0 auto;
+                width: 80%;
+                div.parent {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    div {
+                        display: flex;
+                        justify-content: center;
+                        font-size: 2rem;
+                        align-items: center;
+                        height: 50dvh;
+                        &.child1 {
+                            background-color: rgb(43, 70, 226);
+                            width: 70%;
+                        }
+                        &.child2 {
+                            background-color: aquamarine;
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -15,9 +45,10 @@
             <h1>10-Percentage Units</h1>
             <h2>CSS Percentage Units</h2>
         </header>
-        <section>
-            <div>
-                
+        <section class="Percentage">
+            <div class="parent">
+                <div class="child1">70%</div>
+                <div class="child2">30%</div>
             </div>
         </section>
     </main>
