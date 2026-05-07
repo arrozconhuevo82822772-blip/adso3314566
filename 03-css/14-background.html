@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>14-background</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        .ejemplo {
+            height: 400px;
+            width: 400px;
+            margin: 10px 0;
+        }
+        .bg-color { background-color: #6B46C1; }
+        .bg-image { background-image: url('../src/imgs/patron.jpg'); }
+        .bg-repeat { 
+            background-image: url('../src/imgs/patron.jpg'); 
+            background-repeat: repeat; 
+            background-size: 100px;
+        }
+        .bg-position { 
+            background-image: url('../src/imgs/patron.jpg'); 
+            background-repeat: no-repeat; 
+            background-position: left; 
+        }
+        .bg-size { 
+            background-image: url('../src/imgs/patron.jpg'); 
+            background-repeat: no-repeat; 
+            background-size: 200px 200px; 
+            background-position: center; 
+        }
+        .bg-attachment { 
+            background-image: url('../src/imgs/patron.jpg'); 
+            background-attachment: fixed; 
+        }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -14,10 +43,34 @@
         <header>
             <h1>14-Background</h1>
             <h2>CSS Background Properties</h2>
+            <ul>
+                <li>background-color</li>
+                <li>background-image</li>
+                <li>background-repeat</li>
+                <li>background-position</li>
+                <li>background-size</li>
+                <li>background attachment</li>
+            </ul>
         </header>
         <section>
             <div>
+                <li>background-color</li>
+                <div class="ejemplo bg-color"></div>
                 
+                <li>background-image</li>
+                <div class="ejemplo bg-image"></div>
+                
+                <li>background-repeat</li>
+                <div class="ejemplo bg-repeat"></div>
+                
+                <li>background-position</li>
+                <div class="ejemplo bg-position"></div>
+                
+                <li>background-size</li>
+                <div class="ejemplo bg-size"></div>
+                
+                <li>background attachment</li>
+                <div class="ejemplo bg-attachment"></div>
             </div>
         </section>
     </main>
