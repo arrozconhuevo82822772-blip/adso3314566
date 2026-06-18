@@ -12,14 +12,14 @@
             border: 2px solid #E9D5FF;
             border-radius: 10px;
         }
-        
+
         .titulo {
             color: #E9D5FF;
             font-size: 1.2rem;
             margin-bottom: 15px;
             font-weight: bold;
         }
-        
+
         .box {
             width: 120px;
             height: 60px;
@@ -31,35 +31,35 @@
             border-radius: 8px;
             font-size: 0.9rem;
         }
-        
-        .static { 
-            position: static; 
+
+        .static {
+            position: static;
             margin: 10px 0;
         }
-        .relative { 
-            position: relative; 
-            top: 15px; 
-            left: 40px; 
+        .relative {
+            position: relative;
+            top: 15px;
+            left: 40px;
             margin: 10px 0;
         }
-        .absolute { 
-            position: relative; 
+        .absolute {
+            position: relative;
             height: 150px;
         }
         .absolute .box {
-            position: absolute; 
-            top: 20px; 
-            right: 20px; 
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
-        .fixed { 
-            position: fixed; 
-            top: 50px; 
-            right: 50px; 
+        .fixed {
+            position: fixed;
+            top: 50px;
+            right: 50px;
             z-index: 10000;
         }
-        .sticky { 
-            position: sticky; 
-            top: 20px; 
+        .sticky {
+            position: sticky;
+            top: 20px;
             margin: 10px 0;
         }
     </style>
@@ -86,26 +86,26 @@
                 <div class="titulo">Normal/Static</div>
                 <div class="box static">box 📦</div>
             </div>
-            
+
             <div class="ejemplo">
                 <div class="titulo">Relative</div>
                 <div class="box relative">box 📦</div>
             </div>
-            
+
             <div class="ejemplo">
                 <div class="titulo">Absolute</div>
                 <div class="absolute">
                     <div class="box">box 📦</div>
                 </div>
             </div>
-            
+
             <div class="ejemplo">
                 <div class="titulo">Fixed </div>
                 <div style="height: 300px; background: rgba(255,255,255,0.1); margin: 10px 0; padding: 10px; border-radius: 5px;">
-                    <p>la caja roja siempre esta en la pantalla</p> 
+                    <p>la caja roja siempre esta en la pantalla</p>
                 </div>
             </div>
-            
+
             <div class="ejemplo">
                 <div class="titulo">Sticky </div>
                 <div class="box sticky">box 📦</div>
