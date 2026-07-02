@@ -5,6 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>37-animations</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        main section {
+            div.jungle {
+                background: url(../src/imgs/jungle.png) no-repeat center;
+                border-radius: 4px;
+                margin-block: 2rem;
+                position: relative;
+                height: 471px;
+                width: 380px;
+                img {
+                    border-radius: 0%;
+                    border: none;
+                    position: absolute;
+                }
+                img.logo {
+                    top: 35px;
+                    left: 30px;
+                    height: 70px;
+                    object-fit: contain;
+                    z-index: 9;
+                    width: 317px;
+                    animation: 1s animLogo ease-in infinite;
+                }
+                img.dk {
+                    top: 120px;
+                    left: 120px;
+                    width: 140px;
+                    object-fit: contain;
+                    z-index: 8;
+                    animation: 2s animDK ease-out infinite;
+                }
+                div.move {
+                    position: absolute;
+                    top: 240px;
+                    left: 0;
+                    img.ryno {
+                        width: 140px;
+                        object-fit: contain;
+                        top: 0;
+                        animation: 3s animRyno linear infinite;
+                    }
+                }
+            }
+        }
+    @keyframes animLogo {
+        0%, 10% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+    }
+    @keyframes animDK {
+        0% {top: 130px; transform:  rotatex(0deg);}
+        40% {top: 80px; transform:  rotatex(0deg);}
+        50% {top: 80px; transform:  rotatex(360deg);}
+        60% {top: 80px; transform:  rotatex(360deg);}
+        100% {top: 130px; transform:  rotatex(360deg);}
+        
+    }
+    @keyframes animRyno {
+0% {
+                left: 0;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            10% {
+                top: -6px;
+                transform: scaleX(1) translateY(0);
+            }
+            20% {
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            22% {
+                left: 100px;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            25% {
+                left: 120px;
+                top: -110px;
+                transform: scaleX(1) translateY(0);
+            }
+            28% {
+                left: 140px;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            40% {
+                left: 200px;
+                top: -6px;
+                transform: scaleX(1) translateY(0);
+            }
+            50% {
+                left: 240px;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            55% {
+                left: 235px;
+                top: -6px;
+                transform: scaleX(-1) translateY(0);
+            }
+            60% {
+                left: 220px;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
+            72% {
+                left: 140px;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
+            75% {
+                left: 120px;
+                top: -110px;
+                transform: scaleX(-1) translateY(0);
+            }
+            78% {
+                left: 100px;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
+            85% {
+                left: 50px;
+                top: -6px;
+                transform: scaleX(-1) translateY(0);
+            }
+            100% {
+                left: 0;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
+    }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -16,7 +152,13 @@
             <h2>Description</h2>
         </header>
         <section>
-
+            <div class="jungle">
+                <img src="../src/imgs/logo-dk.png" class="logo">
+                <img src="../src/imgs/dk.png" class="dk">
+                <div class="move">
+                    <img src="../src/imgs/ryno.png" class="ryno">
+                </div>
+            </div>
         </section>
     </main>
 </body>
