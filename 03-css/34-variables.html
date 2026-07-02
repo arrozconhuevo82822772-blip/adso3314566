@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>34-variables</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        :root {
+            --primary-color: #ff63ed;
+            --secondary-color: #c165ff;
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+            --card-radius: 12px;
+            --spacing: 1rem;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .caja-negra-individual {
+            border-left: 6px solid var(--primary-color);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .caja-negra-individual:nth-child(even) {
+            border-left-color: var(--secondary-color);
+        }
+
+        .caja-negra-individual strong {
+            color: var(--primary-color);
+        }
+
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -15,9 +41,43 @@
             <h1>34-Variables</h1>
             <h2>Description</h2>
         </header>
-        <section>
+        <div class="contenedor-cards">
 
-        </section>
+                <div class="caja-negra-individual">
+                    <h3>Primary Color</h3>
+                    <p>
+                        This card uses the <strong>--primary-color</strong> CSS variable.
+                    </p>
+                </div>
+
+                <div class="caja-negra-individual">
+                    <h3> Secondary Color</h3>
+                    <p>
+                        Variables allow you to change colors globally from a single place.
+                    </p>
+                </div>
+
+                <div class="caja-negra-individual">
+                    <h3>Spacing Variable</h3>
+                    <p>
+                        Padding and margins can be controlled with reusable variables.
+                    </p>
+                </div>
+
+                <div class="caja-negra-individual">
+                    <h3>Border Radius</h3>
+                    <p>
+                        The rounded corners use the <strong>--card-radius</strong> variable.
+                    </p>
+                </div>
+
+                <div class="caja-negra-individual">
+                    <h3>Theme Management</h3>
+                    <p>
+                        CSS variables make it easy to create light and dark themes.
+                    </p>
+                </div>
+            </div>
     </main>
 </body>
 </html>

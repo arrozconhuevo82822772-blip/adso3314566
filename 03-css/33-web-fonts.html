@@ -5,6 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>33-web-fonts</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Orbitron:wght@400;700;900&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;700&display=swap');
+
+        .caja-negra-individual {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .fuente-dancing {
+            font-family: "Dancing Script", cursive;
+            font-size: 60px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(255, 107, 107, 0.5);
+            margin: 10px 0;
+        }
+
+        .fuente-orbitron {
+            font-family: "Orbitron", sans-serif;
+            font-size: 45px;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .fuente-merriweather {
+            font-family: "Merriweather", serif;
+            font-size: 50px;
+            color: #ffa500;
+            font-weight: 700;
+            font-style: italic;
+            text-shadow: 0 2px 15px rgba(255, 165, 0, 0.4);
+            margin: 10px 0;
+        }
+
+        .fuente-montserrat {
+            font-family: "Montserrat", sans-serif;
+            font-size: 40px;
+            color: #4a90d9;
+            font-weight: 300;
+            text-shadow: 0 2px 10px rgba(74, 144, 217, 0.3);
+            margin: 10px 0;
+            letter-spacing: 3px;
+        }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -15,9 +65,25 @@
             <h1>33-Web Fonts</h1>
             <h2>Description</h2>
         </header>
-        <section>
+        <div class="caja-negra-individual">
+                <div class="fuente-dancing">Dancing Script</div>
+                <p style="color: #e49d9d; font-family: Arial, sans-serif; font-size: 14px;">Fuente cursiva elegante</p>
+            </div>
 
-        </section>
+            <div class="caja-negra-individual">
+                <div class="fuente-orbitron">ORBITRON</div>
+                <p style="color: #e98f8f; font-family: Arial, sans-serif; font-size: 14px;">Fuente futurista y tecnológica</p>
+            </div>
+
+            <div class="caja-negra-individual">
+                <div class="fuente-merriweather">Merriweather</div>
+                <p style="color: #e77676; font-family: Arial, sans-serif; font-size: 14px;">Fuente serif con estilo</p>
+            </div>
+
+            <div class="caja-negra-individual">
+                <div class="fuente-montserrat">MONTSERRAT</div>
+                <p style="color: #e67171; font-family: Arial, sans-serif; font-size: 14px;">Fuente sans-serif moderna</p>
+            </div>
     </main>
 </body>
 </html>

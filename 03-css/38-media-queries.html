@@ -4,19 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>38-media-queries</title>
-    <link rel="stylesheet" href="../src/css/03-css.css">
+        <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
+
+        *{
+            transition: all 0.5s ease-in;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #003675;
+            color: #fff;
+
+            main {
+                padding: 4rem;
+
+                header {
+                    figure.logo {
+                        background: url(../src/imgs/pepsi01.png) no-repeat center;
+                        height: 354px;
+                        margin: 0 auto;
+                        width: 919px;
+                        
+                    }
+                }
+
+                section {
+                    h1 {
+                        text-align: center;
+                        span.md, span.sm {
+                            display: none;
+                        }
+                    }
+
+                    p {
+                        margin-block: 4rem;
+                        text-align: justify;
+                        line-height: 2rem;
+                    }
+                }
+
+
+            }
+        }
+        @media (max-width:1024px) {
+            body main {
+                header {
+                    figure.logo {
+                        background: url(../src/imgs/pepsi02.png) no-repeat center;
+                        height: 370px;
+                        width: 348px;
+                    }
+                }
+                section {
+                    h1 {
+                        font-size: 2rem;
+                        span.lg, span.sm {
+                            display: none;
+
+                        }
+                        span.md {
+                            display: inline;
+                        }
+                        
+
+                        
+                    }
+                }
+            }
+        
+        @media (max-width: 780px) {
+            body main {
+                header {
+                    figure.logo {
+                        background: url(../src/imgs/pepsi03.png) no-repeat center;
+                        height: 156px;
+                        width: 162px;
+                    }
+                }
+                section {
+                    h1 {
+                        font-size: 1.2rem;
+                        span.lg, span.md {
+                            display: none;
+
+                        }
+                        span.sm {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }    
+        }
+    </style>
 </head>
 <body>
-    <a class="btn-home" href="index.html">
-        <svg class="SVGBGI" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="accent" d="M12 20V4l-8 8 8 8z"></path><path class="outline" d="m2.29,12.71l8,8c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-6.29-6.29h15.59c.55,0,1-.45,1-1s-.45-1-1-1H5.41l6.29-6.29c.39-.39.39-1.02,0-1.41-.2-.2-.45-.29-.71-.29s-.51.1-.71.29L2.29,11.29c-.39.39-.39,1.02,0,1.41Z"></path><path class="solid" d="m1.58 13.42 8 8a2 2 0 0 0 2.83-2.83L7.82 14h13.17c1.1 0 2-.9 2-2s-.9-2-2-2H7.83l4.59-4.59a2 2 0 0 0-1.41-3.42 2 2 0 0 0-1.41.59l-8.02 8a2.01 2.01 0 0 0 0 2.83Z"></path></svg>
-    </a>
     <main>
         <header>
-            <h1>38-Media Queries</h1>
-            <h2>Description</h2>
+                <figure class="logo"></figure>
         </header>
         <section>
-
+            <h1>Media Queries
+                <span class="lg">(> 1024px) 💻 Desktop</span>
+                <span class="md">(> 1024px) 🔳 Tablet</span>
+                <span class="sm">(> 780px) 📱 Mobile</span>
+            </h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id eveniet rem accusantium voluptates dolorem delectus nihil placeat est odio molestias velit labore, numquam et unde architecto doloribus explicabo? Fugiat, nihil?
+            Officiis et id illo, vel ratione, fugit exercitationem repellendus fugiat natus voluptatum maxime! Doloremque vel itaque officiis fuga soluta molestias aliquid. Eius quae quas suscipit fuga reiciendis quisquam reprehenderit laboriosam!
+            Aliquid aut nesciunt quia dolorum. Voluptatem praesentium maxime error corrupti illo dolorum fugiat quo impedit laudantium voluptas repellat autem cupiditate, reprehenderit aperiam, molestiae numquam? Aspernatur dolor tempore magni. Facilis, inventore.
+        </p>
         </section>
     </main>
 </body>

@@ -5,6 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>31-filters</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        .caja-negra-individual {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .caja-negra-individual h3 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .caja-blur img {
+            filter: blur(5px);
+            transition: filter 0.5s ease;
+        }
+
+        .caja-blur img:hover {
+            filter: none;
+        }
+
+        .caja-brightness img {
+            filter: brightness(2);
+            transition: filter 0.5s ease;
+        }
+
+        .caja-brightness img:hover {
+            filter: none;
+        }
+
+        .caja-sepia img {
+            filter: sepia();
+            transition: filter 0.5s ease;
+        }
+
+        .caja-sepia img:hover {
+            filter: none;
+        }
+
+        .caja-contrast img {
+            filter: contrast(2);
+            transition: filter 0.5s ease;
+        }
+
+        .caja-contrast img:hover {
+            filter: none;
+        }
+
+        .caja-invert img {
+            filter: invert();
+            transition: filter 0.5s ease;
+        }
+
+        .caja-invert img:hover {
+            filter: none;
+        }
+
+        .caja-saturate img {
+            filter: saturate(2);
+            transition: filter 0.5s ease;
+        }
+
+        .caja-saturate img:hover {
+            filter: none;
+        }
+    </style>
 </head>
 <body>
     <a class="btn-home" href="index.html">
@@ -15,9 +85,40 @@
             <h1>31-Filters</h1>
             <h2>Description</h2>
         </header>
-        <section>
+        <div class="caja-negra-individual">
+                <h3>Normal</h3>
+                <img src="../src/imgs/Profile_-_Marin_Kitagawa.webp" alt="Imagen normal">
+            </div>
 
-        </section>
+            <div class="caja-negra-individual caja-blur">
+                <h3>Blur</h3>
+                <img src="../src/imgs/Profile_-_Marin_Kitagawa.webp" alt="Imagen con blur">
+            </div>
+
+            <div class="caja-negra-individual caja-brightness">
+                <h3>Brightness</h3>
+                <img src="../src/imgs/Profile_-_Marin_Kitagawa.webp" alt="Imagen con brillo">
+            </div>
+
+            <div class="caja-negra-individual caja-sepia">
+                <h3>Sepia</h3>
+                <img src="../src/imgs/Profile_-_Marin_Kitagawa.webp" alt="Imagen sepia">
+            </div>
+
+            <div class="caja-negra-individual caja-contrast">
+                <h3>Contrast</h3>
+                <img src="../src/imgs/Profile_-_Marin_Kitagawa.webp" alt="Imagen con contraste">
+            </div>
+
+            <div class="caja-negra-individual caja-invert">
+                <h3>Invert</h3>
+                <img src="../src/imgs/Profile_-_Marin_Kitagawa.webp" alt="Imagen invertida">
+            </div>
+
+            <div class="caja-negra-individual caja-saturate">
+                <h3>Saturate</h3>
+                <img src="../src/imgs/Profile_-_Marin_Kitagawa.webp" alt="Imagen con saturación">
+            </div>
     </main>
 </body>
 </html>
