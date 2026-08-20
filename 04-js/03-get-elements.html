@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - Get Elements</title>
+    <link rel="stylesheet" href="../src/css/04-js.css">
+    <style>
+        section {
+            ul {
+                padding: 0;
+            }
+
+            ul li,
+            figure.animal {
+                background-color: #0006;
+                border-radius: 2px;
+                height: 25px;
+                margin: 2px auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                zoom: 2.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="btn-home" href="index.html">
+        <svg class="SVGBGI" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="accent" d="M12 20V4l-8 8 8 8z"></path><path class="outline" d="m2.29,12.71l8,8c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-6.29-6.29h15.59c.55,0,1-.45,1-1s-.45-1-1-1H5.41l6.29-6.29c.39-.39.39-1.02,0-1.41-.2-.2-.45-.29-.71-.29s-.51.1-.71.29L2.29,11.29c-.39.39-.39,1.02,0,1.41Z"></path><path class="solid" d="m1.58 13.42 8 8a2 2 0 0 0 2.83-2.83L7.82 14h13.17c1.1 0 2-.9 2-2s-.9-2-2-2H7.83l4.59-4.59a2 2 0 0 0-1.41-3.42 2 2 0 0 0-1.41.59l-8.02 8a2.01 2.01 0 0 0 0 2.83Z"></path></svg>
+    </a>
+    <main>
+        <header>
+            <h1>03 - Get Elements</h1>
+            <h2>Access and manipulate HTML elements using JavaScript.</h2>
+        </header>
+        <section>
+            <div class="recuadro">
+                <h3>Get Element By Id:</h3>
+                <h4 id="year"></h4>
+                <h3>Get Elements By Tag Name:</h3>
+                <ul>
+                    <li>🍎</li>
+                    <li>🍇</li>
+                    <li>🍊</li>
+                    <li>🍒</li>
+                </ul>
+                <h4></h4>
+                <h3>Get Elements By Class Name</h3>
+                <p class="paragraph">Lorem ipsum dolor</p>
+                <p class="paragraph">Lorem ipsum dolor</p>
+                <p class="paragraph">Lorem ipsum dolor</p>
+                <h3>Query Selector & Query Selector All</h3>
+                <figure class="animal first">🦊</figure>
+                <figure class="animal">🐼</figure>
+                <figure class="animal">🐷</figure>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Get Element By Id
+        const year = document.getElementById('year');
+        const ndate = new Date;
+        year.textContent = `Current Year: 
+                            ${ndate.getFullYear()}`
+
+        // Get Elements By TagName
+        const fruits = document.getElementsByTagName('li')
+        const h4s = document.getElementsByTagName('h4')
+
+        h4s[1].textContent = `There are ${fruits.length} fruits`
+        h4s[1].innerHTML += `<br> the first fruit is ${fruits[0].textContent}`
+        h4s[1].innerHTML += `<br> & the last fruit is ${fruits[fruits.length - 1].textContent}`
+
+        // Get Elements By Class Name
+        const ps = document.getElementsByClassName('paragraph')
+        ps[1].textContent = 'New text value'
+        ps[1].style.backgroundColor = 'Crimson'
+        ps[1].style.color = 'White'
+        ps[1].style.padding = '0.4rem'
+
+        // QuerySelector & QuerySelectorAll
+        const first = document.querySelector('figure.first')
+        first.style.backgroundColor = 'orange'
+
+        const animals = document.querySelectorAll('figure.animal')
+
+        // Static and large
+
+        // animals[0].style.borderRadius = '50%',
+        // animals[1].style.borderRadius = '50%',
+        // animals[2].style.borderRadius = '50%',
+
+        // Dynamic and Short way
+        animals.forEach(element => {
+            element.style.borderRadius = '50%'
+        })
+
+    </script>
+</body>
+
+</html>
