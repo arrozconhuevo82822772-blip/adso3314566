@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40-steps</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        :root {
+            --size-step: calc(1024px/4);
+        }
+        section div.bg {
+            background: url(../src/imgs/bg-steps.png) 
+                        no-repeat center /cover;
+            border-radius: 4px;
+            height: 560px;
+            margin: 0.2rem auto;
+            position: relative;
+            width: 380px;
+        }
+        section div.bg div.steps {
+            background: url(../src/imgs/steps-all.png) no-repeat;
+            height: var(--size-step);
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--size-step);
+            animation: animSteps 0.4s steps(4) infinite;
+        }
+        section div.bg div.steps.front {
+            background-position-y: calc(var(--size-step)*0);
+        }
+        section div.bg div.steps.left {
+            background-position-y: calc(var(--size-step)*-1);
+        }
+        section div.bg div.steps.right {
+            background-position-y: calc(var(--size-step)*-2);
+        }
+        section div.bg div.steps.back {
+            background-position-y: calc(var(--size-step)*-3);
+        }
+        section div.bg div.controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 1rem;
+            gap: 0.3rem;
+            align-items: center;
+        }
+        section div.bg div.controls button {
+            background-color: #fff9;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            height: 50px;
+            width: 50px;
+            transition: all 0.2s ease-in;
+            &:hover {
+                background-color: #fffc;
+                transform: scale(1.05);
+            }
+        }
+        @keyframes animSteps {
+            100% {
+                background-position-x: -1024px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <a class="btn-home" href="index.html">
+        <svg class="SVGBGI" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="accent" d="M12 20V4l-8 8 8 8z"></path><path class="outline" d="m2.29,12.71l8,8c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-6.29-6.29h15.59c.55,0,1-.45,1-1s-.45-1-1-1H5.41l6.29-6.29c.39-.39.39-1.02,0-1.41-.2-.2-.45-.29-.71-.29s-.51.1-.71.29L2.29,11.29c-.39.39-.39,1.02,0,1.41Z"></path><path class="solid" d="m1.58 13.42 8 8a2 2 0 0 0 2.83-2.83L7.82 14h13.17c1.1 0 2-.9 2-2s-.9-2-2-2H7.83l4.59-4.59a2 2 0 0 0-1.41-3.42 2 2 0 0 0-1.41.59l-8.02 8a2.01 2.01 0 0 0 0 2.83Z"></path></svg>
+    </a>
+    <main>
+        <header>
+            <h1>40-Steps()</h1>
+            <h2>Discrete animation timing with steps() function</h2>
+        </header>
+        <section>
+            <div class="bg">
+                <div class="steps front"></div>
+                <div class="controls">
+                    <div class="header">
+                        <button class="btnBack">↑</button>
+                    </div>
+                    <div class="footer">
+                        <button class="btnLeft">←</button>
+                        <button class="btnFront">↓</button>
+                        <button class="btnRight">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+        let btnFront = document.querySelector('.btnFront')
+        let btnBack  = document.querySelector('.btnBack')
+        let btnLeft  = document.querySelector('.btnLeft')
+        let btnRight = document.querySelector('.btnRight')
+
+        let steps    = document.querySelector('.steps')
+
+        btnFront.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('front')
+        })
+
+        btnBack.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('back')
+        })
+
+        btnLeft.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('left')
+        })
+
+        btnRight.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('right')
+        })
+
+        function removeAllClasses() {
+            steps.classList.remove('front', 'back', 'left', 'right')
+        }
+
+        document.addEventListener('keyup', function(e) {
+            if(e.keyCode == 37) {
+                removeAllClasses()
+                steps.classList.add('left')
+            }
+            if(e.keyCode == 38) {
+                removeAllClasses()
+                steps.classList.add('back')
+            }
+            if(e.keyCode == 39) {
+                removeAllClasses()
+                steps.classList.add('right')
+            }
+            if(e.keyCode == 40) {
+                removeAllClasses()
+                steps.classList.add('front')
+            }
+        })
+
+    </script>
+</html>

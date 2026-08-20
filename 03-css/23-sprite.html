@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23-sprite</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        div#sprite {
+            background: url(../src/imgs/anim-sprite.png);
+            height: 256px;
+            margin: 1rem auto;
+            width: 256px;
+        }
+        div#sprite.sp1 {background-position: calc(-256px * 0) 0;}
+        div#sprite.sp2 {background-position: calc(-256px * 1) 0;}
+        div#sprite.sp3 {background-position: calc(-256px * 2) 0;}
+        div#sprite.sp4 {background-position: calc(-256px * 3) 0;}
+        div#sprite.sp5 {background-position: calc(-256px * 4) 0;}
+        div#sprite.sp6 {background-position: calc(-256px * 5) 0;}
+
+        div#sprite2 {
+            background: url(../src/imgs/anim.sprite2.png);
+            height: 448px;
+            margin: 1rem auto;
+            width: 768px;
+        }
+        div#sprite2.sp1 {background-position: calc(-768px * 0) 0;}
+        div#sprite2.sp2 {background-position: calc(-768px * 1) 0;}
+        div#sprite2.sp3 {background-position: calc(-768px * 2) 0;}
+        div#sprite2.sp4 {background-position: calc(-768px * 3) 0;}
+        div#sprite2.sp5 {background-position: calc(-768px * 4) 0;}
+        div#sprite2.sp6 {background-position: calc(-768px * 5) 0;}
+        div#sprite2.sp7 {background-position: calc(-768px * 6) 0;}
+        div#sprite2.sp8 {background-position: calc(-768px * 7) 0;}
+        div#sprite2.sp9 {background-position: calc(-768px * 8) 0;}
+        div#sprite2.sp10 {background-position: calc(-768px * 9) 0;}
+        div#sprite2.sp11 {background-position: calc(-768px * 10) 0;}
+        div#sprite2.sp12 {background-position: calc(-768px * 11) 0;}
+        div#sprite2.sp13 {background-position: calc(-768px * 12) 0;}
+        div#sprite2.sp14 {background-position: calc(-768px * 13) 0;}
+        div#sprite2.sp15 {background-position: calc(-768px * 14) 0;}
+        div#sprite2.sp16 {background-position: calc(-768px * 15) 0;}
+        div#sprite2.sp17 {background-position: calc(-768px * 16) 0;}
+        div#sprite2.sp18 {background-position: calc(-768px * 17) 0;}
+        div#sprite2.sp19 {background-position: calc(-768px * 18) 0;}
+        div#sprite2.sp20 {background-position: calc(-768px * 19) 0;}
+        div#sprite2.sp21 {background-position: calc(-768px * 20) 0;}
+        div#sprite2.sp22 {background-position: calc(-768px * 21) 0;}
+        div#sprite2.sp23 {background-position: calc(-768px * 22) 0;}
+        div#sprite2.sp24 {background-position: calc(-768px * 23) 0;}
+        div#sprite2.sp25 {background-position: calc(-768px * 24) 0;}
+    </style>
+</head>
+<body>
+    <a class="btn-home" href="index.html">
+        <svg class="SVGBGI" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="accent" d="M12 20V4l-8 8 8 8z"></path><path class="outline" d="m2.29,12.71l8,8c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-6.29-6.29h15.59c.55,0,1-.45,1-1s-.45-1-1-1H5.41l6.29-6.29c.39-.39.39-1.02,0-1.41-.2-.2-.45-.29-.71-.29s-.51.1-.71.29L2.29,11.29c-.39.39-.39,1.02,0,1.41Z"></path><path class="solid" d="m1.58 13.42 8 8a2 2 0 0 0 2.83-2.83L7.82 14h13.17c1.1 0 2-.9 2-2s-.9-2-2-2H7.83l4.59-4.59a2 2 0 0 0-1.41-3.42 2 2 0 0 0-1.41.59l-8.02 8a2.01 2 0 0 0 0 2.83Z"></path></svg>
+    </a>
+    <main>
+        <header>
+            <h1>23-Sprite</h1>
+            <h2>An image sprite is a collection of images put into a single image.</h2>
+        </header>
+        <section>
+            <div id="sprite" class="sp1"></div>
+            <div id="sprite2" class="sp1"></div>
+        </section>
+    </main>
+    <script>
+        const sprite = document.getElementById('sprite')
+        const sprite2 = document.getElementById('sprite2')
+        const numSprite1 = 6
+        const numSprite2 = 25
+        let count = 1
+        let count2 = 1
+        setInterval(() => {
+            sprite.className = ''
+            sprite.classList.add ('sp'+count)
+            if (count == numSprite1) count = 1;
+            else count++;
+
+            sprite2.className = ''
+            sprite2.classList.add ('sp'+count2)
+            if (count2 == numSprite2) count2 = 1;
+            else count2++;
+
+        }, 100)
+    </script>
+</body>
+</html>

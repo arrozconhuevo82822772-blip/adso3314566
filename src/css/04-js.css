@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+        body {
+            background-color: #F0DB4F;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23F7DF1E' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23EBD41E' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23DFC91E' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23D3BF1F' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23C7B41F' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23BBA91F' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23AF9E1F' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23A39420' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23978920' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%238B7E20' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%237F7320' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23736921' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23675E21' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235B5321' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234F4821' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23433E22' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23373322' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%232B2822' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Lilita One', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100dvh;
+            margin: 0;
+        }
+
+        a.btn-home {
+            fill: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            border-radius: 50%;
+            position: fixed;
+            display: flex;
+            width: 32px;
+            height: 32px;
+            opacity: .6;
+            padding: 0.4rem;
+            inset: 0.4rem;
+            transition: all 0.46s ease-in;
+            z-index: 10;
+        }
+
+        a.btn-home:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        main h1 {
+            color: #2B2822;
+            font-size: 4rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        main img {
+            object-fit: cover;
+            border: 4px solid #2B2822;
+            border-radius: 50%;
+            height: 280px;
+            display: block;
+            margin: 1.5rem auto;
+            width: 280px;
+        }
+
+        main h4 {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 0.5rem 0 1.5rem;
+            color: #2B2822;
+        }
+
+        .grid-menu {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            width: 100%;
+            max-width: 1400px;
+            flex-wrap: wrap;
+        }
+
+        .grid-menu > div {
+            flex: 1;
+            min-width: 340px;
+        }
+
+        menu {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0;
+        }
+
+        menu a {
+            background-color: #2B2822;
+            color: #ffffff;
+            border-radius: 17rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 0.5rem 1.2rem 0.5rem 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        menu a:hover {
+            background-color: #F7DF1E;
+            color: #2B2822;
+            transform: scale(1.02);
+        }
+
+        menu a .icon-circle {
+            background-color: rgba(247, 223, 30, 0.2);
+            color: #F7DF1E;
+            border-radius: 50%;
+            font-size: 1.7rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 64px;
+            width: 64px;
+            flex-shrink: 0;
+            margin-right: 1rem;
+            transition: inherit;
+        }
+
+        menu a:hover .icon-circle {
+            background-color: rgba(43, 40, 34, 0.15);
+            color: #2B2822;
+        }
+
+        menu a .menu-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        menu a h4 {
+            margin: 0;
+            text-align: left;
+            font-size: 1.6rem;
+            color: inherit;
+        }
+
+        menu a small {
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        menu a:hover h4,
+        menu a:hover small {
+            color: #2B2822;
+        }
+
+        menu p.empty {
+            background-color: rgba(43, 40, 34, 0.85);
+            color: #F7DF1E;
+            border-radius: 1rem;
+            text-align: center;
+            padding: 1rem 1.4rem;
+            font-family: 'Lilita One', sans-serif;
+            font-size: 1rem;
+        }

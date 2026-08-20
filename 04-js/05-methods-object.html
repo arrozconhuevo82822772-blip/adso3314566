@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 - Methods and Objects</title>
+
+    <link rel="stylesheet" href="../src/css/04-js.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+
+    <style>
+        main section h3.pk-name {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        main section h4 {
+            background-color: #fff9;
+            color: #0009;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1.6rem;
+            margin: 0 auto;
+            padding: 0.4rem 1rem;
+            width: fit-content;
+        }
+
+        main section figure {
+            background-repeat: no-repeat;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            height: 192px;
+            width: 202px;
+        }
+
+        main section figure.alive {
+            background-position-x: 0px;
+        }
+
+        main section figure.attack {
+            background-position-x: -202px;
+        }
+
+        main section figure.feed {
+            background-position-x: -404px;
+        }
+
+        main section figure.dead {
+            background-position-x: -608px;
+        }
+
+        main section div.actions {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 150px;
+        }
+
+        main section div.actions button {
+            background: #fff9;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 0.4rem 1rem;
+            transition: transform 0.2s ease-in;
+        }
+
+        main section div.actions button:hover:not(:disabled) {
+            transform: scale(1.2);
+        }
+
+        main section div.actions button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        main section figure {
+            position: relative;
+        }
+
+        /* Flash tint when hit */
+        main section figure.hit-flash::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: red;
+            mix-blend-mode: multiply;
+            opacity: 0.6;
+            animation: flashOut 0.4s ease-out forwards;
+        }
+
+        /* Green flash when fed */
+        main section figure.feed-flash::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #2ecc71;
+            mix-blend-mode: multiply;
+            opacity: 0.6;
+            animation: flashOut 0.4s ease-out forwards;
+        }
+
+        @keyframes flashOut {
+            from {
+                opacity: 0.6;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* Floating +/- HP text */
+        .floating-text {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.6rem;
+            font-weight: bold;
+            pointer-events: none;
+            animation: floatUp 1s ease-out forwards;
+        }
+
+        .floating-text.heal {
+            color: #2ecc71;
+        }
+
+        .floating-text.damage {
+            color: #e74c3c;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -40px);
+            }
+        }
+
+        /* Mini bounce animation con cooldown incluido */
+        .mini-bounce {
+            animation: miniBounce 0.25s ease-in-out 2;
+        }
+
+        @keyframes miniBounce {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.85);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Clase para deshabilitar el cooldown visualmente */
+        .cooldown {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* Ajuste para el botón en cooldown */
+        .actions button.cooldown {
+            transform: scale(0.95);
+            transition: transform 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="btn-home" href="index.html">
+        <svg class="SVGBGI" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path class="accent" d="M12 20V4l-8 8 8 8z"></path>
+            <path class="outline" d="m2.29,12.71l8,8c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-6.29-6.29h15.59c.55,0,1-.45,1-1s-.45-1-1-1H5.41l6.29-6.29c.39-.39.39-1.02,0-1.41-.2-.2-.45-.29-.71-.29s-.51.1-.71.29L2.29,11.29c-.39.39-.39,1.02,0,1.41Z"></path>
+            <path class="solid" d="m1.58 13.42 8 8a2 2 0 0 0 2.83-2.83L7.82 14h13.17c1.1 0 2-.9 2-2s-.9-2-2-2H7.83l4.59-4.59a2 2 0 0 0-1.41-3.42 2 2 0 0 0-1.41.59l-8.02 8a2.01 2.01 0 0 0 0 2.83Z"></path>
+        </svg>
+    </a>
+
+    <main>
+
+        <header>
+            <h1>05 - Methods and Objects</h1>
+            <h2>This way we can include CSS within the style tag, it is very useful when you only have an html document.</h2>
+        </header>
+
+        <div class="recuadro">
+            <section>
+                <h3 class="pk-name"></h3>
+                <h4 class="pk-hp"></h4>
+
+                <figure class="pk-image animate__animated"></figure>
+
+                <div class="actions">
+                    <button class="btn-attack">Attack 👊</button>
+                    <button class="btn-feed">Feed 🍽️</button>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <script>
+        // Elements
+        const pkName = document.querySelector('.pk-name');
+        const pkHp = document.querySelector('.pk-hp');
+        const pkImage = document.querySelector('.pk-image');
+
+        // Buttons
+        const btnAttack = document.querySelector('.btn-attack');
+        const btnFeed = document.querySelector('.btn-feed');
+
+        // Object
+        const pokemon = {
+
+            // Attributes
+            name: 'Snorlax',
+            type: 'Normal',
+            hp: 100,
+            maxHp: 200,
+            image: 'src/css/imgs/snorlax-sprite.png',
+            status: 'alive',
+
+            // Cooldown flag para evitar spam
+            cooldown: false,
+
+            // Update buttons state
+            updateButtons: function() {
+                // Disable attack if HP is 0 or dead, or if cooldown active
+                btnAttack.disabled = this.hp <= 0 || this.status === 'dead' || this.cooldown;
+
+                // Disable feed if HP is at max (200) or cooldown active
+                btnFeed.disabled = this.hp >= this.maxHp || this.cooldown;
+
+                // Añadir clase cooldown visual si procede
+                btnAttack.classList.toggle('cooldown', this.cooldown);
+                btnFeed.classList.toggle('cooldown', this.cooldown);
+            },
+
+            // Render
+            render: function() {
+                pkName.innerHTML = `${this.name} <small>(${this.type})</small>`;
+                pkImage.style.backgroundImage = `url(${this.image})`;
+                this.updateHp('animate__rubberBand');
+                this.updateButtons();
+            },
+
+            // Update HP and classes
+            updateHp: function(fx) {
+
+                pkHp.innerHTML = `HP: ${this.hp}`;
+
+                pkImage.classList.remove(
+                    'alive',
+                    'attack',
+                    'feed',
+                    'dead',
+                    'animate__rubberBand',
+                    'animate__headShake',
+                    'animate__heartBeat'
+                );
+
+                pkImage.classList.add(this.status, fx);
+                this.updateButtons();
+            },
+
+            // Show floating +/- HP text over the figure
+            showFloatingText: function(text, type) {
+
+                const floater = document.createElement('span');
+                floater.classList.add('floating-text', type);
+                floater.textContent = text;
+
+                pkImage.appendChild(floater);
+
+                // Remove once the animation finishes
+                floater.addEventListener('animationend', () => floater.remove());
+            },
+
+            // Método para activar el cooldown (0.6s) y la mini animación de rebote
+            triggerCooldownAndBounce: function() {
+                // Activar cooldown
+                this.cooldown = true;
+                this.updateButtons();
+
+                // Aplicar mini animación de rebote a la imagen
+                pkImage.classList.add('mini-bounce');
+                // Quitar clase tras terminar la animación (0.5s)
+                setTimeout(() => {
+                    pkImage.classList.remove('mini-bounce');
+                }, 500);
+
+                // Desactivar cooldown después de 0.6s
+                setTimeout(() => {
+                    this.cooldown = false;
+                    this.updateButtons();
+                }, 600);
+            },
+
+            // Feed
+            feed: function() {
+
+                if (this.hp < this.maxHp && !this.cooldown) {
+
+                    // Cooldown y rebote
+                    this.triggerCooldownAndBounce();
+
+                    this.hp = Math.min(this.hp + 25, this.maxHp);
+                    this.status = 'feed';
+
+                    this.updateHp('animate__heartBeat');
+                    this.showFloatingText('+25', 'heal');
+
+                    // Green flash animation
+                    pkImage.classList.add('feed-flash');
+                    setTimeout(() => pkImage.classList.remove('feed-flash'), 400);
+
+                    if (this.hp > 0) {
+                        this.updateStatus();
+                    }
+                    this.updateButtons();
+                }
+            },
+
+            // Attack
+            attack: function() {
+
+                if (this.hp > 0 && !this.cooldown) {
+
+                    // Cooldown y rebote
+                    this.triggerCooldownAndBounce();
+
+                    this.hp = Math.max(this.hp - 25, 0);
+
+                    if (this.hp <= 0) {
+                        this.hp = 0;
+                        this.status = 'dead';
+                    } else {
+                        this.status = 'attack';
+                    }
+
+                    this.updateHp('animate__headShake');
+                    this.showFloatingText('-25', 'damage');
+
+                    // Quick red flash on hit
+                    pkImage.classList.add('hit-flash');
+                    setTimeout(() => pkImage.classList.remove('hit-flash'), 400);
+
+                    if (this.hp > 0) {
+                        this.updateStatus();
+                    }
+                    this.updateButtons();
+                }
+            },
+
+            // Return to alive after animation
+            updateStatus: function() {
+
+                setTimeout(() => {
+
+                    this.status = 'alive';
+
+                    pkImage.classList.remove(
+                        'attack',
+                        'feed',
+                        'animate__rubberBand',
+                        'animate__headShake',
+                        'animate__heartBeat'
+                    );
+
+                    pkImage.classList.add('alive');
+                    this.updateButtons();
+
+                }, 1200);
+            }
+
+        };
+
+        // Initial render
+        pokemon.render();
+
+        // Events
+        btnFeed.addEventListener('click', function() {
+            pokemon.feed();
+        });
+
+        btnAttack.addEventListener('click', function() {
+            pokemon.attack();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19-text</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+</head>
+<body>
+    <a class="btn-home" href="index.html">
+        <svg class="SVGBGI" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="accent" d="M12 20V4l-8 8 8 8z"></path><path class="outline" d="m2.29,12.71l8,8c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-6.29-6.29h15.59c.55,0,1-.45,1-1s-.45-1-1-1H5.41l6.29-6.29c.39-.39.39-1.02,0-1.41-.2-.2-.45-.29-.71-.29s-.51.1-.71.29L2.29,11.29c-.39.39-.39,1.02,0,1.41Z"></path><path class="solid" d="m1.58 13.42 8 8a2 2 0 0 0 2.83-2.83L7.82 14h13.17c1.1 0 2-.9 2-2s-.9-2-2-2H7.83l4.59-4.59a2 2 0 0 0-1.41-3.42 2 2 0 0 0-1.41.59l-8.02 8a2.01 2 0 0 0 0 2.83Z"></path></svg>
+    </a>
+    <main>
+        <header>
+            <h1>19-Text</h1>
+            <h2>CSS Text Properties</h2>
+            <ul>
+                <li>Line Height</li>
+                <li>Decoration</li>
+                <li>Transform</li>
+                <li>Indent</li>
+                <li>Spacing (word/letter)</li>
+            </ul>
+        </header>
+        <section>
+            <div>
+                <div style="display: flex; flex-direction: column; gap: 14px; width: min(760px, 100%);">
+                    <div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.9); color: #5D0065;">
+                        <h3 style="margin: 0 0 10px 0;">text-align</h3>
+                        <p style="margin: 0 0 10px 0; text-align: left;">left</p>
+                        <p style="margin: 0 0 10px 0; text-align: center;">center</p>
+                        <p style="margin: 0; text-align: right;">right</p>
+                    </div>
+
+                    <div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.9); color: #5D0065;">
+                        <h3 style="margin: 0 0 10px 0;">line-height</h3>
+                        <p style="margin: 0; line-height: 1.8;">
+                            Este párrafo usa line-height: 1.8 para mostrar más interlineado.
+                            Segunda línea para que se note el espacio.
+                        </p>
+                    </div>
+
+                    <div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.9); color: #5D0065;">
+                        <h3 style="margin: 0 0 10px 0;">text-decoration</h3>
+                        <p style="margin: 0 0 8px 0; text-decoration: underline;">underline</p>
+                        <p style="margin: 0 0 8px 0; text-decoration: line-through;">line-through</p>
+                        <p style="margin: 0; text-decoration: none;">none</p>
+                    </div>
+
+                    <div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.9); color: #5D0065;">
+                        <h3 style="margin: 0 0 10px 0;">text-transform</h3>
+                        <p style="margin: 0 0 8px 0; text-transform: uppercase;">esto está en uppercase</p>
+                        <p style="margin: 0 0 8px 0; text-transform: lowercase;">ESTO ESTÁ EN lowercase</p>
+                        <p style="margin: 0; text-transform: capitalize;">esto está en capitalize</p>
+                    </div>
+
+                    <div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.9); color: #5D0065;">
+                        <h3 style="margin: 0 0 10px 0;">text-indent</h3>
+                        <p style="margin: 0; text-indent: 34px;">
+                            Este párrafo inicia con sangría usando text-indent: 34px.
+                        </p>
+                    </div>
+
+                    <div style="padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.9); color: #5D0065;">
+                        <h3 style="margin: 0 0 10px 0;">letter-spacing / word-spacing</h3>
+                        <p style="margin: 0; letter-spacing: 2px; word-spacing: 12px;">
+                            Separación entre letras y palabras en este texto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
