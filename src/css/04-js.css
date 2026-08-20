@@ -145,3 +145,13 @@
             font-family: 'Lilita One', sans-serif;
             font-size: 1rem;
         }
+
+        .recuadro {
+            background-color: rgba(43, 40, 34, 0.85);
+            color: #F7DF1E;
+            border-radius: 1rem;
+            text-align: center;
+            padding: 1rem 1.4rem;
+            font-family: 'Lilita One', sans-serif;
+            font-size: 1rem;
+        }
